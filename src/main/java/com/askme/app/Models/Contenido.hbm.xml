@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 29-10-2017 12:24:51 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="askdb" dynamic-insert="false" dynamic-update="false" mutable="true" name="Contenido" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="contenido">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="Usuario" embed-xml="true" fetch="select" insert="true" name="usuario" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="usuario_id" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="nombre" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="texto" optimistic-lock="true" type="string" unique="false">
+            <column length="50000" name="texto"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="conceptos" optimistic-lock="true" sort="unsorted" table="concepto">
+            <key on-delete="noaction">
+                <column name="contenido_id" not-null="true"/>
+            </key>
+            <one-to-many class="Concepto" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="tests" optimistic-lock="true" sort="unsorted" table="test">
+            <key on-delete="noaction">
+                <column name="contenido_id" not-null="true"/>
+            </key>
+            <one-to-many class="Test" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
