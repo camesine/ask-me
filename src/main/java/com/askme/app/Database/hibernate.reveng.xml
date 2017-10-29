@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-schema="askdb" match-name=".*" />
+	<table catalog="askdb" name="caracteristica">
+		<column name="id"></column>
+		<column name="detalle"></column>
+		<column name="concepto_id"></column>
+	</table>
+	<table catalog="askdb" name="concepto">
+		<column name="id"></column>
+		<column name="contenido_id"></column>
+		<column name="nombre"></column>
+	</table>
+	<table catalog="askdb" name="contenido">
+		<column name="id"></column>
+		<column name="usuario_id"></column>
+		<column name="texto"></column>
+		<column name="nombre"></column>
+	</table>
+	<table catalog="askdb" name="definicion">
+		<column name="id"></column>
+		<column name="concepto_id"></column>
+		<column name="detalle"></column>
+	</table>
+	<table catalog="askdb" name="observacion">
+		<column name="id"></column>
+		<column name="concepto_id"></column>
+		<column name="detalle"></column>
+	</table>
+	<table catalog="askdb" name="relacion">
+		<column name="id"></column>
+		<column name="concepto1"></column>
+		<column name="tipo_id"></column>
+		<column name="concepto2"></column>
+	</table>
+	<table catalog="askdb" name="test">
+		<column name="id"></column>
+		<column name="fecha"></column>
+		<column name="resultados"></column>
+		<column name="contenido_id"></column>
+	</table>
+	<table catalog="askdb" name="tipo_relacion">
+		<column name="id"></column>
+		<column name="nombre"></column>
+	</table>
+	<table catalog="askdb" name="tipo_usuario">
+		<column name="id"></column>
+		<column name="nombre"></column>
+	</table>
+	<table catalog="askdb" name="usuario">
+		<column name="id"></column>
+		<column name="apellido"></column>
+		<column name="correo"></column>
+		<column name="tipo_id"></column>
+		<column name="nombre"></column>
+		<column name="contrasena"></column>
+	</table>
+</hibernate-reverse-engineering>
