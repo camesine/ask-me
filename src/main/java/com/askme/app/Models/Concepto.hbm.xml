@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated 29-10-2017 12:24:51 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
-    <class catalog="askdb" dynamic-insert="false" dynamic-update="false" mutable="true" name="Concepto" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="concepto">
+    <class catalog="askdb" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.askme.app.Models.Concepto" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="concepto">
         <id name="id" type="java.lang.Integer">
             <column name="id"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="Contenido" embed-xml="true" fetch="select" insert="true" name="contenido" not-found="exception" optimistic-lock="true" unique="false" update="true">
+        <many-to-one class="com.askme.app.Models.Contenido" embed-xml="true" fetch="select" insert="true" name="contenido" not-found="exception" optimistic-lock="true" unique="false" update="true">
             <column name="contenido_id" not-null="true"/>
         </many-to-one>
         <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
@@ -16,31 +16,31 @@
             <key on-delete="noaction">
                 <column name="concepto_id" not-null="true"/>
             </key>
-            <one-to-many class="Caracteristica" embed-xml="true" not-found="exception"/>
+            <one-to-many class="com.askme.app.Models.Caracteristica" embed-xml="true" not-found="exception"/>
         </set>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="observacions" optimistic-lock="true" sort="unsorted" table="observacion">
             <key on-delete="noaction">
                 <column name="concepto_id" not-null="true"/>
             </key>
-            <one-to-many class="Observacion" embed-xml="true" not-found="exception"/>
+            <one-to-many class="com.askme.app.Models.Observacion" embed-xml="true" not-found="exception"/>
         </set>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="relacionsForConcepto1" optimistic-lock="true" sort="unsorted" table="relacion">
             <key on-delete="noaction">
                 <column name="concepto1" not-null="true"/>
             </key>
-            <one-to-many class="Relacion" embed-xml="true" not-found="exception"/>
+            <one-to-many class="com.askme.app.Models.Relacion" embed-xml="true" not-found="exception"/>
         </set>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="definicions" optimistic-lock="true" sort="unsorted" table="definicion">
             <key on-delete="noaction">
                 <column name="concepto_id" not-null="true"/>
             </key>
-            <one-to-many class="Definicion" embed-xml="true" not-found="exception"/>
+            <one-to-many class="com.askme.app.Models.Definicion" embed-xml="true" not-found="exception"/>
         </set>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="relacionsForConcepto2" optimistic-lock="true" sort="unsorted" table="relacion">
             <key on-delete="noaction">
                 <column name="concepto2" not-null="true"/>
             </key>
-            <one-to-many class="Relacion" embed-xml="true" not-found="exception"/>
+            <one-to-many class="com.askme.app.Models.Relacion" embed-xml="true" not-found="exception"/>
         </set>
     </class>
 </hibernate-mapping>

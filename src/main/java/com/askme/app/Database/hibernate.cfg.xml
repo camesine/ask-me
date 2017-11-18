@@ -8,5 +8,15 @@
         <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/askdb</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<mapping resource="com/askme/app/Models/Contenido.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/Caracteristica.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/Usuario.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/Test.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/Observacion.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/Relacion.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/Concepto.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/Definicion.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/TipoRelacion.hbm.xml"/>
+	    <mapping resource="com/askme/app/Models/TipoUsuario.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

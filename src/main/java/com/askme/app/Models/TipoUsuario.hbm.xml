@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated 29-10-2017 12:24:51 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
-    <class catalog="askdb" dynamic-insert="false" dynamic-update="false" mutable="true" name="TipoUsuario" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="tipo_usuario">
+    <class catalog="askdb" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.askme.app.Models.TipoUsuario" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="tipo_usuario">
         <id name="id" type="java.lang.Integer">
             <column name="id"/>
             <generator class="identity"/>
@@ -13,7 +13,7 @@
             <key on-delete="noaction">
                 <column name="tipo_id" not-null="true"/>
             </key>
-            <one-to-many class="Usuario" embed-xml="true" not-found="exception"/>
+            <one-to-many class="com.askme.app.Models.Usuario" embed-xml="true" not-found="exception"/>
         </set>
     </class>
 </hibernate-mapping>

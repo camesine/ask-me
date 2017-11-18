@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated 29-10-2017 12:24:51 by Hibernate Tools 5.2.5.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
-    <class catalog="askdb" dynamic-insert="false" dynamic-update="false" mutable="true" name="Usuario" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="usuario">
+    <class catalog="askdb" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.askme.app.Models.Usuario" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="usuario">
         <id name="id" type="java.lang.Integer">
             <column name="id"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="TipoUsuario" embed-xml="true" fetch="select" insert="true" name="tipoUsuario" not-found="exception" optimistic-lock="true" unique="false" update="true">
+        <many-to-one class="com.askme.app.Models.TipoUsuario" embed-xml="true" fetch="select" insert="true" name="tipoUsuario" not-found="exception" optimistic-lock="true" unique="false" update="true">
             <column name="tipo_id" not-null="true"/>
         </many-to-one>
         <property generated="never" lazy="false" name="correo" optimistic-lock="true" type="string" unique="false">
@@ -25,7 +25,7 @@
             <key on-delete="noaction">
                 <column name="usuario_id" not-null="true"/>
             </key>
-            <one-to-many class="Contenido" embed-xml="true" not-found="exception"/>
+            <one-to-many class="com.askme.app.Models.Contenido" embed-xml="true" not-found="exception"/>
         </set>
     </class>
 </hibernate-mapping>
